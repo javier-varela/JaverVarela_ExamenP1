@@ -1,0 +1,49 @@
+﻿@model JaverVarela_ExamenP1.Models.JavierVarela_tabla
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>JavierVarela_tabla</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="JVId" />
+            <div class="form-group">
+                <label asp-for="JVDescripcion" class="control-label"></label>
+                <input asp-for="JVDescripcion" class="form-control" />
+                <span asp-validation-for="JVDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JVNota" class="control-label"></label>
+                <input asp-for="JVNota" class="form-control" />
+                <span asp-validation-for="JVNota" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="JVIsTrue" /> @Html.DisplayNameFor(model => model.JVIsTrue)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="JVFecha" class="control-label"></label>
+                <input asp-for="JVFecha" class="form-control" />
+                <span asp-validation-for="JVFecha" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

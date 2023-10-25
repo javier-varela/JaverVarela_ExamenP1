@@ -1,0 +1,42 @@
+﻿@model JaverVarela_ExamenP1.Models.JavierVarela_tabla
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>JavierVarela_tabla</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JVDescripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JVDescripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JVNota)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JVNota)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JVIsTrue)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JVIsTrue)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JVFecha)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JVFecha)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.JVId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

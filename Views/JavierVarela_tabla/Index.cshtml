@@ -1,0 +1,53 @@
+﻿@model IEnumerable<JaverVarela_ExamenP1.Models.JavierVarela_tabla>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JVDescripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JVNota)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JVIsTrue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JVFecha)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JVDescripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JVNota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JVIsTrue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JVFecha)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JVId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.JVId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JVId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
